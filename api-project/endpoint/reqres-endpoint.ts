@@ -7,11 +7,11 @@ import env from "dotenv";
 env.config();
 const request = supertest(process.env.REQRES_URL);
 
-const createUser = (body: any) => request.post(`/users`)
-  .send(body);
+export const createUser = (body: any) => request.post(`/users`).send(body);
 
-const reqresEndPo = {
-  createUser,
-};
+export const getAllUsers = (param: any) => request.get(`/users`).query(param);
 
-export default reqresEndPo;
+export const editUser = (path: any, body: any) =>
+  request.put(`/users/${path}`).send(body);
+
+export const deleteUser = (path: any) => request.del(`/users/${path}`);

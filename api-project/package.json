@@ -5,11 +5,11 @@
   "maintainer": "SDET",
   "license": "ISC",
   "directories": {
-    "test": "./__tests"
+    "test": "./tests"
   },
   "scripts": {
-    "testLocal": "mocha -r ts-node/register './__tests/*.ts' --timeout 15000",
-    "testCloud": "mocha -r ts-node/register './__tests/*.ts' --reporter mochawesome --timeout 15000 --reporter-options reportFilename=report"
+    "testLocal": "mocha -r ts-node/register './tests/*.ts' --timeout 15000",
+    "testReport": "mocha -r ts-node/register './tests/*.ts' --reporter mochawesome --timeout 15000 --reporter-options reportFilename=report"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
     "bugsUrl": "https://github.com/MahePrime/kibies/issues"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/chai": "^4.3.4",
     "@types/chai-json-schema": "^1.4.6",
     "@types/mocha": "^10.0.1",
