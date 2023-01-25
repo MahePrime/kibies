@@ -1,0 +1,43 @@
+name: manual-trigger-api
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3.3.0
+      
+    - name: Open API folder
+      run: cd api-project/
+      
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.6.0
+      with:
+        node-version: 18
+    
+    - name: Npm setup
+      uses: ng-easy/npm-setup@v1.7.2
+      
+    - name: Install depedencies
+      run: npm install
+      
+    - name: Setup environment
+      run: cp .env.sample .env
+      
+    - name: Run automation
+      if: always()
+      run: npm run testCloud
+      
+    - name: Deploy reports to github pages
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        branch: gh-pages
+        folder: mochawesome-report
+        clean: true
+        single-commit: true
+      
