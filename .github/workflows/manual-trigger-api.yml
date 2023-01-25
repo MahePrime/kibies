@@ -11,6 +11,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3.3.0
       
+    - name: Open API folder
+      run: cd api-project/
+      
     - name: Setup Node.js environment
       uses: actions/setup-node@v3.6.0
       with:
