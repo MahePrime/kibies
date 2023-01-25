@@ -1,9 +1,8 @@
-import reqresCreateData from "../data/createUser";
-import reqresEndPo from "../endpoint/reqresEndPo";
-import expectCondition from "../expect/common_expect";
+import reqresCreateData from "../data/create-user";
+import reqresEndPo from "../endpoint/reqres-endpoint";
+import expectCondition from "../expect/common-expect";
 
-describe("Reqres Test", () => {
-
+describe("Kibitalk Test", () => {
   it("POST - Create user", async () => {
     const body = reqresCreateData.createUser;
     const response = await reqresEndPo.createUser(body);
