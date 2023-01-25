@@ -18,9 +18,6 @@ jobs:
       uses: actions/setup-node@v3.6.0
       with:
         node-version: 18
-    
-    - name: Npm setup
-      uses: ng-easy/npm-setup@v1.7.2
       
     - name: Install depedencies
       run: npm install
