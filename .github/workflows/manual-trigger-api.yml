@@ -27,16 +27,13 @@ jobs:
       
     - name: Run automation
       if: always()
-      run: |
-        npm run testReport
-        ls
+      run: npm run testReport
       
     - name: Deploy reports to github pages
       if: always()
       uses: JamesIves/github-pages-deploy-action@v4.4.1
       with:
         branch: gh-pages
-        folder: mochawesome-report
+        folder: api-project/mochawesome-report
         clean: true
         single-commit: true
-      
