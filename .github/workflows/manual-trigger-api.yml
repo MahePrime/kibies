@@ -36,7 +36,7 @@ jobs:
         pwd
         ls
         cd api-project/
-        npm run testCloud
+        npm run testReport
       
     - name: Deploy reports to github pages
       if: always()
