@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    working-directory: api-project
     
     steps:
     - name: Checkout
@@ -17,33 +18,23 @@ jobs:
         node-version: 18
       
     - name: Install depedencies
-      run: |
-        pwd
-        ls
-        cd api-project/
-        npm install
+      run: npm install
       
     - name: Setup environment
-      run: |
-        pwd
-        ls
-        cd api-project/
-        cp .env.sample .env
+      run: cp .env.sample .env
       
     - name: Run automation
       if: always()
       run: |
-        pwd
-        ls
-        cd api-project/
         npm run testReport
+        ls
       
     - name: Deploy reports to github pages
       if: always()
       uses: JamesIves/github-pages-deploy-action@v4.4.1
       with:
         branch: gh-pages
-        folder: api-project/mochawesome-report
+        folder: mochawesome-report
         clean: true
         single-commit: true
       
