@@ -20,6 +20,7 @@ describe('Register Facebook', function () {
     await action.clickOn(signupPage.inputPassword);
     await action.expectToExist(signupPage.errorEmptyNewPassword);
     await action.clickOn(signupPage.inputDate);
+    await browser.pause(800);
     await action.expectToExist(signupPage.errorEmptyDob);
   });
 
