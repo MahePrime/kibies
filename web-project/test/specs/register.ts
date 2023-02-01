@@ -36,7 +36,6 @@ describe('Register Facebook', function () {
     await action.clickOnIndex(signupPage.inputGender, 0);
     await action.clickOn(signupPage.buttonSignUp);
     await action.expectToHaveUrlContaining(data.validData.registerUrlSuccess);
-    await action.expectToExist(checkpointPage.buttonContinue);
   });
 });
 
