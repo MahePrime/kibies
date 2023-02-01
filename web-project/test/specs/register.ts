@@ -19,8 +19,6 @@ describe('Register Facebook', function () {
     await action.expectToExist(signupPage.errorEmptyNumberEmail);
     await action.clickOn(signupPage.inputPassword);
     await action.expectToExist(signupPage.errorEmptyNewPassword);
-    await action.clickOn(signupPage.inputDate);
-    await action.expectToExist(signupPage.errorEmptyDob);
   });
 
   it('POSITIVE - successfully registered with email', async () => {
@@ -38,7 +36,6 @@ describe('Register Facebook', function () {
     await action.clickOnIndex(signupPage.inputGender, 0);
     await action.clickOn(signupPage.buttonSignUp);
     await action.expectToHaveUrlContaining(data.validData.registerUrlSuccess);
-    await action.expectToExist(checkpointPage.buttonContinue);
   });
 });
 

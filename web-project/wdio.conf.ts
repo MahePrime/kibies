@@ -1,4 +1,4 @@
-import { TimelineService } from 'wdio-timeline-reporter/timeline-service';
+const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
 
 export const config: WebdriverIO.Config = {
   // Runner Configuration
@@ -21,31 +21,36 @@ export const config: WebdriverIO.Config = {
     acceptInsecureCerts: true,
     "goog:chromeOptions": {
       args: [
-        //"--headless",
+        "--headless",
         "--incognito",
       ]
       }
   }],
 
   // Test Configurations
-  logLevel: 'silent',
+  logLevel: 'error',
   bail: 0,
   baseUrl: "https://www.facebook.com/signup",
   waitforTimeout: 30000,
-  connectionRetryTimeout: 60000,
+  connectionRetryTimeout: 40000,
   connectionRetryCount: 2,
-  services: [
-    [ TimelineService,
-    ["selenium-standalone", { drivers: { chrome: "latest" } }]
-    ]
-  ],
+  services: [[TimelineService], 'chromedriver'],
   framework: 'mocha',
-  reporters: ['spec',
-  ['timeline', { outputDir: './reporter' }]
-  ],
-
+  reporters: [ "spec", ['timeline', 
+  { 
+    outputDir: './reporter',
+    embedImages: true,
+    images: {
+      quality: 80,
+      resize: false,
+      reductionRatio: 1
+    },
+    screenshotStrategy: 'on:error'
+  }] 
+],
+  
   mochaOpts: {
     ui: 'bdd',
-    timeout: 60000
+    timeout: 40000
   },
 }
