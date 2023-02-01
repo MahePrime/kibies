@@ -21,7 +21,7 @@ export const config: WebdriverIO.Config = {
     acceptInsecureCerts: true,
     "goog:chromeOptions": {
       args: [
-        //"--headless",
+        "--headless",
         "--incognito",
       ]
       }
