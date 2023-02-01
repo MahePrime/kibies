@@ -1,0 +1,86 @@
+{
+  "start": "2023-02-01T11:14:50.685Z",
+  "end": "2023-02-01T11:16:00.426Z",
+  "capabilities": {
+    "browserName": "chrome",
+    "browserVersion": "109.0.0.0",
+    "platformName": "darwin",
+    "platformVersion": "21.6.0",
+    "goog:chromeOptions": {
+      "debuggerAddress": "127.0.0.1:52701"
+    },
+    "sessionId": "0f0f3265-9a78-44ae-bea2-797078eadea6"
+  },
+  "baseUrl": "https://www.facebook.com/signup",
+  "framework": "mocha",
+  "duration": 69741,
+  "suites": [
+    {
+      "title": "Register Facebook",
+      "duration": 69715,
+      "start": "2023-02-01T11:14:50.703Z",
+      "end": "2023-02-01T11:16:00.418Z",
+      "tests": [
+        {
+          "title": "NEGATIVE - empty all field",
+          "start": "2023-02-01T11:14:50.704Z",
+          "end": "2023-02-01T11:14:52.381Z",
+          "duration": 1677,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "POSITIVE - successfully registered with email",
+          "start": "2023-02-01T11:14:52.381Z",
+          "duration": 0,
+          "state": "pending",
+          "screenshots": []
+        },
+        {
+          "title": "POSITIVE - successfully registered with email",
+          "start": "2023-02-01T11:15:26.655Z",
+          "end": "2023-02-01T11:16:00.415Z",
+          "duration": 33760,
+          "state": "failed",
+          "screenshots": [],
+          "error": {
+            "type": "Error",
+            "message": "Expect $(`//*[text()='Continue']`) to exist\n\nExpected: \u001b[32m\"exist\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mnot \u001b[27mexist\"\u001b[39m",
+            "stack": "Error: Expect $(`//*[text()='Continue']`) to exist\n\nExpected: \u001b[32m\"exist\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mnot \u001b[27mexist\"\u001b[39m\n    at action.<anonymous> (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:8:28)\n    at step (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:33:23)\n    at Object.next (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:14:53)\n    at /Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:4:12)\n    at action.expectToExist (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/lib/action.ts:45:16)\n    at Suite.<anonymous> (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/test/specs/register.ts:41:18)\n    at step (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/test/specs/register.ts:33:23)\n    at Object.next (/Users/qonitatanjung/Documents/kibitalk/kibies/web-project/test/specs/register.ts:14:53)"
+          }
+        }
+      ],
+      "hooks": [
+        {
+          "start": "2023-02-01T11:14:50.705Z",
+          "end": "2023-02-01T11:14:51.999Z",
+          "duration": 1294,
+          "title": "\"before each\" hook for Register Facebook",
+          "associatedSuite": "Register Facebook"
+        },
+        {
+          "start": "2023-02-01T11:14:52.381Z",
+          "end": "2023-02-01T11:14:53.235Z",
+          "duration": 854,
+          "title": "\"before each\" hook for Register Facebook",
+          "associatedSuite": "Register Facebook"
+        },
+        {
+          "start": "2023-02-01T11:15:26.655Z",
+          "end": "2023-02-01T11:15:27.197Z",
+          "duration": 542,
+          "title": "\"before each\" hook for Register Facebook",
+          "associatedSuite": "Register Facebook"
+        }
+      ]
+    }
+  ],
+  "specs": [
+    "file:///Users/qonitatanjung/Documents/kibitalk/kibies/web-project/test/specs/register.ts"
+  ],
+  "state": {
+    "passed": 1,
+    "failed": 1,
+    "skipped": 0
+  }
+}
