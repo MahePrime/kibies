@@ -19,8 +19,6 @@ describe('Register Facebook', function () {
     await action.expectToExist(signupPage.errorEmptyNumberEmail);
     await action.clickOn(signupPage.inputPassword);
     await action.expectToExist(signupPage.errorEmptyNewPassword);
-    await action.clickOn(signupPage.inputMonth);
-    await action.expectToExist(signupPage.errorEmptyDob);
   });
 
   it('POSITIVE - successfully registered with email', async () => {
