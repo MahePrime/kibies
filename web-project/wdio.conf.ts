@@ -28,7 +28,7 @@ export const config: WebdriverIO.Config = {
   }],
 
   // Test Configurations
-  logLevel: 'silent',
+  logLevel: 'info',
   bail: 0,
   baseUrl: "https://www.facebook.com/signup",
   waitforTimeout: 30000,
