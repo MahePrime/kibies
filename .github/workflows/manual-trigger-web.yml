@@ -38,7 +38,7 @@ jobs:
 
       - name: Run automation test
         if: always()
-        run: npx wdio run ./wdio.conf.ts
+        run: pnpm run test
 
       - name: Deploy reports to github pages
         if: always()
