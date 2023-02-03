@@ -38,7 +38,7 @@ export const config: WebdriverIO.Config = {
   framework: 'mocha',
   reporters: [ "spec", ['timeline', 
   { 
-    outputDir: './reporter',
+    outputDir: './reporter/web',
     embedImages: true,
     images: {
       quality: 80,
