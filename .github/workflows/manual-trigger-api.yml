@@ -35,5 +35,5 @@ jobs:
       with:
         branch: gh-pages
         folder: api-project/mochawesome-report
-        clean: true
+        clean: false
         single-commit: true
